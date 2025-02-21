@@ -4,16 +4,17 @@ Este projeto tem como objetivo analisar o desempenho do Flamengo no Campeonato C
 
 ## Estatísticas Analisadas
 
-- **Total de Finalizações (Total Shots)**
-- **Gols Esperados (Expected Goals - xG)**
-- **Média de Finalizações por Jogo**
-- **Média de Gols Esperados por Jogo**
+- **Total de finalizações (Total Shots)**
+- **Gols esperados (Expected Goals - xG)**
+- **Média de finalizações por Jogo**
+- **Média de gols esperados por Jogo**
+- **Teste de hipótese**
 
 ## Resultados Obtidos
 
 ### 1. **Média de Finalizações (Total Shots)**
 
-- **Em casa**: O Flamengo teve uma média de **8,2 finalizações por jogo, no qual eu arredondei para 8 para melhor entendimento**.
+- **Em casa**: O Flamengo teve uma média de **14 finalizações por jogo**.
 - **Fora de casa**: A média aumentou para **16,4 finalizações por jogo, no qual eu arredondei para 16 para melhor entendimento**.
 
 #### Insight:
@@ -34,6 +35,16 @@ A expectativa de gols do Flamengo jogando como visitante é relativamente maior 
 
 #### Insight:
 Apesar de ter uma média de finalizações considerável, o Flamengo pode ter mais eficiência na conversão dessas finalizações em gols, especialmente jogando em casa.
+
+#### Teste de hipótese:
+Utilizei o **teste t de Student** para classificar duas amostras independentes, uma vez que as amostras são derivadas de dois grupos distintos: jogos como mandante e jogos como visitantes.
+Foi usado um **nível de significância de 0.005**.
+Obtive resultados para:
+- **estatística t:** -0.5541
+- **valor-p:** 0.5947
+
+Com base no teste realizado, pude concluir que, de acordo com os dados analisados, não há nenhuma diferença significativa nas finalizações entre os jogos de mandante e visitante. Portanto, a quantidade de finalizações entre ambas situações parecem ter quase o mesmo resultado.
+
 
 ## Conclusão
 

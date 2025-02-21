@@ -1,6 +1,8 @@
 
 
 import pandas as pd
+import numpy as np
+from scipy import stats
 
 df = pd.read_excel("flamengo_carioca_2025_corrigido.xlsx")
 
@@ -36,8 +38,8 @@ media_home = sum(xG_home) / len(xG_home)
 xG_away = [1.25, 3.00, 1.92, 3.37, 1.07]
 media_away = sum(xG_away) / len(xG_away)
 
-print(f'A media de expectativa de goals jogando como mandante é: {media_home:.2f}')
-print(f'A media de expectativa de goals jogando como visitante é: {media_away:.2f}')
+print(f'A media de expectativa de goals jogando como mandante e: {media_home:.2f}')
+print(f'A media de expectativa de goals jogando como visitante e: {media_away:.2f}')
 
 
 df_totalShots_home = df[(df['Statistic'] == 'Total shots') &
@@ -49,11 +51,26 @@ df_totalShots_away = df[(df['Statistic'] == 'Total shots') &
 print(df_totalShots_home)
 print(df_totalShots_away)
 
-totalShots_home = [14, 7, 8, 5, 7]
+totalShots_home = [9, 14, 13, 28, 6]
 media_Shome = round(sum(totalShots_home) / len(totalShots_home))
 
 totalShots_away = [13, 20, 21, 18, 10]
 media_Saway = round(sum(totalShots_away) / len(totalShots_away))
 
-print(f'A media de expectativa de chutes jogando como mandante é: {media_Shome}')
-print(f'A media de expectativa de chutes jogando como mandante é: {media_Saway}')
+print(f'A media de expectativa de chutes jogando como mandante e: {media_Shome}')
+print(f'A media de expectativa de chutes jogando como mandante e: {media_Saway}')
+
+
+finalizacoes_mandante = [9, 14, 13, 28, 6]
+finalizacoes_visitante = [13, 20, 21, 18, 10]
+
+t_stat, p_value = stats.ttest_ind(finalizacoes_mandante, finalizacoes_visitante)
+
+print(f'Estatistica t: {t_stat:.4f}')
+print(f'Valor-p: {p_value:.4f}')
+
+alpha = 0.05
+if p_value < alpha:
+    print("Rejeitamos a hipotese nula. Ha uma diferenca significativa nas finalizaoees entre casa e fora de casa.")
+else:
+    print("Nao rejeitamos a hipotese nula. Nao ha uma diferenca significativa nas finalizacoes entre casa e fora de casa.")
