@@ -62,7 +62,7 @@ totalShots_away = [13, 20, 21, 18, 10]
 media_Saway = round(sum(totalShots_away) / len(totalShots_away))
 
 print(f'A media de expectativa de chutes jogando como mandante e: {media_Shome}')
-print(f'A media de expectativa de chutes jogando como mandante e: {media_Saway}')
+print(f'A media de expectativa de chutes jogando como visitante e: {media_Saway}')
 
 
 finalizacoes_mandante = [9, 14, 13, 28, 6]
