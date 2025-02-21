@@ -36,5 +36,24 @@ media_home = sum(xG_home) / len(xG_home)
 xG_away = [1.25, 3.00, 1.92, 3.37, 1.07]
 media_away = sum(xG_away) / len(xG_away)
 
-print(f'A media de expectativa de goals jogando como mandante é: {media_home}')
-print(f'A media de expectativa de goals jogando como visitante é: {media_away}')
+print(f'A media de expectativa de goals jogando como mandante é: {media_home:.2f}')
+print(f'A media de expectativa de goals jogando como visitante é: {media_away:.2f}')
+
+
+df_totalShots_home = df[(df['Statistic'] == 'Total shots') &
+                (df['Flamengo_Posicao'] == 'Home')]
+
+df_totalShots_away = df[(df['Statistic'] == 'Total shots') &
+                (df['Flamengo_Posicao'] == 'Away')]
+
+print(df_totalShots_home)
+print(df_totalShots_away)
+
+totalShots_home = [14, 7, 8, 5, 7]
+media_Shome = round(sum(totalShots_home) / len(totalShots_home))
+
+totalShots_away = [13, 20, 21, 18, 10]
+media_Saway = round(sum(totalShots_away) / len(totalShots_away))
+
+print(f'A media de expectativa de chutes jogando como mandante é: {media_Shome}')
+print(f'A media de expectativa de chutes jogando como mandante é: {media_Saway}')
