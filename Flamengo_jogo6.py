@@ -2,13 +2,11 @@
 
 import requests
 import pandas as pd
-from bs4 import BeautifulSoup
 
-page = requests.get('https://www.sofascore.com/pt/football/match/flamengo-vasco-da-gama/zOsGuc#id:13198220')
 
-site = BeautifulSoup(page.content, 'html.parser')
+page = requests.get('https://www.sofascore.com/pt/football/match/sampaio-correa-rj-flamengo/GucsHcdc#id:13198198')
 
-url = "https://www.sofascore.com/api/v1/event/13198220/statistics"
+url = "https://www.sofascore.com/api/v1/event/13198198/statistics"
 
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 Edg/133.0.0.0"
@@ -45,17 +43,10 @@ if response.status_code == 200:
     # Converte os dados para um DataFrame
     df = pd.DataFrame(all_data)
 
-    pd.set_option('display.max_rows', None)  # Exibe todas as linhas
-    pd.set_option('display.max_columns', None)  # Exibe todas as coluna
-
-
-    print(df)
-
     # Exporta para Excel
-    excel_file = 'flaxvas_stats.xlsx'
+    excel_file = 'flaxsam_stats.xlsx'
     df.to_excel(excel_file, index=False)
 
     print(f'Dados exportados para {excel_file}')
 
-
-    
+    print(df)
