@@ -1,7 +1,8 @@
 # Análise de desempenho do Flamengo - Carioca 2025
 
 Este projeto tem como objetivo analisar o desempenho do Flamengo no Campeonato Carioca de 2025 com base em diversas estatísticas de jogo.
-Usei método de web scraping,  pandas e spicy
+
+Utilizei as bibliotecas requests, pandas, numpy e spicy.
 
 ## Estatísticas Analisadas
 
